@@ -103,17 +103,10 @@ It should show you the version of Ruby ​​installed. If this does not happen 
 
 ### Usage
 
-Run the following command inside the project folder:
+To run the project, execute the following command:
 
 ```
- ruby my_enumerable.rb
- ruby my_list.rb
-```
-
-This will display the following outputs:
-
-```
-To be shown later
+ruby decode.rb
 ```
 
 ### Run tests
