@@ -137,7 +137,7 @@ ruby decode.rb
 
 > Here are some future features that could be added to the School Library Management System in the future.
 
-- **Improving the Algorithim:** This would help us improve the module and class much better.
+- **Decode longer messages:** This would help us improve the module and class much better.
 
 These are just a few ideas for future features that could be added to the School Library Management System module. The specific features that are added will depend on the needs and wants of the users.
 
