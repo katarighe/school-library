@@ -1,6 +1,5 @@
 class Classroom
-  attr_accessor :label
-  attr_reader :students
+  attr_accessor :label, :students
 
   def initialize(label)
     @label = label
@@ -9,6 +8,6 @@ class Classroom
 
   def add_student(student)
     @students.push(student)
-    student.classroom(self)
+    student.classroom = self
   end
 end
