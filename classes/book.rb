@@ -5,5 +5,5 @@ class Book
     def initalize(title, author)
         @title = title
         @author = author
-        @rentals = []
+        @rental = []
 end
