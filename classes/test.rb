@@ -1,20 +1,31 @@
 require_relative './student'
 require_relative './classroom'
-require_relative './person'
 require_relative './rental'
 require_relative './book'
 
-class1 = Classroom.new('Mathematics for Beginners')
-student1 = Student.new(12)
-class1.add_student(student1)
-student2 = Student.new(15)
-student2.classroom = class1
+student1 = Student.new('Unknown', 13, 'Mohamed Aden')
+student2 = Student.new('Unknown', 17, 'Mark Adams')
 
-book1 = Book.new('book1', 'author1')
-person1 = Person.new(12)
-rental1 = Rental.new('2019-08-07', book1, person1)
+class314 = Classroom.new('314')
 
-puts rental1.book.title
-puts rental1.person.age
-puts student2.classroom.label
-puts class1.students.map(&:age)
+class314.add_student(student1)
+student1.classroom.label
+student2.classroom
+class314.students.count
+student2.classroom = class314
+class314.students.count
+
+book1 = Book.new('First Class Travellers', 'Author1')
+book2 = Book.new('Flying Home', 'Author2')
+
+book1.rentals
+book2.rentals
+
+rent1 = Rental.new('2017-12-07', student1, book1)
+rent2 = Rental.new('2019-03-07', student2, book2)
+rent3 = Rental.new('2019-08-07', student1, book2)
+
+student1.rentals.count
+student2.rentals.count
+book1.rentals.count
+book2.rentals.count
