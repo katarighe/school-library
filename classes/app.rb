@@ -122,8 +122,8 @@ class App
     print 'ID of person: '
     id = gets.chomp.to_i
     selected = @rentals.find_all { |rental| rental.person.id == id }
-    if selected.nil?
-      puts "Person with the given ID (id=#{id}) does not exist!"
+    if selected.empty?
+      puts "Person with the given ID (#{id}) does not exist!"
       return
     end
     puts 'Rentals:'
