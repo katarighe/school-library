@@ -138,7 +138,7 @@ ruby main.rb
 > Here are some future features that could be added to the School Library Management System in the future.
 
 - **Integration with other educational tools:** SLMS can be integrated with other educational tools, such as learning management systems (LMS) and electronic textbooks, to provide a more seamless learning experience for students.
-= **Support for multiple languages and cultures:** SLMS can be made more inclusive by supporting multiple languages and cultures. This would allow students from all backgrounds to access and benefit from the resources that the library has to offer.
+- **Support for multiple languages and cultures:** SLMS can be made more inclusive by supporting multiple languages and cultures. This would allow students from all backgrounds to access and benefit from the resources that the library has to offer.
 
 These are just a few ideas for future features that could be added to the School Library Management System module. The specific features that are added will depend on the needs and wants of the users.
 
