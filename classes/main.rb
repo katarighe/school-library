@@ -36,8 +36,6 @@ def call_option(option)
     create_rental
   when 6
     list_rentals
-  else
-    puts 'Please choose a number between 1 and 7!'
   end
 end
 
