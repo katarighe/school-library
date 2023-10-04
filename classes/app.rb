@@ -42,7 +42,7 @@ class App
     when 2
       create_teacher
     else
-      puts "Invalid choice. Please enter a valid option!"
+      puts 'Invalid choice. Please enter a valid option!'
     end
   end
 
