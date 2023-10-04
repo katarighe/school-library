@@ -14,7 +14,7 @@ class App
   end
 
   def list_books
-    @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
+    @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
   end
 
   def list_books_with_index
@@ -53,7 +53,7 @@ class App
     print 'Name: '
     name = gets.chomp.to_s
 
-    print 'Has parent permission? [Y/N]: '
+    print 'Has parent permission? [Y / N]: '
     parent_permission = gets.chomp.to_s
 
     if parent_permission =~ /^[Yy]/
