@@ -14,7 +14,7 @@ class App
   end
 
   def list_books
-    @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
+    @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
   end
 
   def list_books_with_index
@@ -34,7 +34,7 @@ class App
   end
 
   def create_person
-    print 'Do you want to create a student (1) or a teacher (2)? [input the number]: '
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     student_or_teacher = gets.chomp.to_i
     case student_or_teacher
     when 1
@@ -42,7 +42,7 @@ class App
     when 2
       create_teacher
     else
-      puts 'Invalid choice. Please enter a valid option!'
+      puts "Error: option has an invalid value (#{student_or_teacher})"
     end
   end
 
@@ -53,7 +53,7 @@ class App
     print 'Name: '
     name = gets.chomp.to_s
 
-    print 'Has parent permission? [Y / N]: '
+    print 'Has parent permission? [Y/N]: '
     parent_permission = gets.chomp.to_s
 
     if parent_permission =~ /^[Yy]/
@@ -123,7 +123,7 @@ class App
     id = gets.chomp.to_i
     selected = @rentals.find_all { |rental| rental.person.id == id }
     if selected.empty?
-      puts "Person with the given ID (#{id}) does not exist!"
+      puts "Person with id #{id} doesn't exist"
       return
     end
     puts 'Rentals:'
