@@ -34,7 +34,7 @@ class App
   end
 
   def create_person
-    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+    print 'Do you want to create a student (1) or a teacher (2)? [input the number]: '
     student_or_teacher = gets.chomp.to_i
     case student_or_teacher
     when 1
@@ -42,7 +42,7 @@ class App
     when 2
       create_teacher
     else
-      puts "Error: option has an invalid value (#{student_or_teacher})"
+      puts "Invalid choice. Please enter a valid option. (#{student_or_teacher})"
     end
   end
 
@@ -53,7 +53,7 @@ class App
     print 'Name: '
     name = gets.chomp.to_s
 
-    print 'Has parent permission? [Y/N]: '
+    print 'Has parent permission? [Y / N]: '
     parent_permission = gets.chomp.to_s
 
     if parent_permission =~ /^[Yy]/
@@ -61,7 +61,7 @@ class App
     elsif parent_permission =~ /^[Nn]/
       student = Student.new('Unknown', age, name, parent_permission: false)
     else
-      puts "Error: option has an invalid value (#{parent_permission})"
+      puts "Invalid choice. Please enter a valid option. (#{parent_permission})"
       return
     end
 
@@ -100,7 +100,7 @@ class App
     list_books_with_index
     book_index = gets.chomp.to_i
     unless (0...@books.length).include?(book_index)
-      puts "Can not add a record. Book #{book_index} doesn't exist"
+      puts "Error adding a record. Book #{book_index} doesn't exist"
       return
     end
     book = @books[book_index]
@@ -108,7 +108,7 @@ class App
     list_people_with_index
     person_index = gets.chomp.to_i
     unless (0...@people.length).include?(person_index)
-      puts "Can not add a record. Person #{person_index} doesn't exist"
+      puts "Error adding a record. Person #{person_index} doesn't exist"
       return
     end
     person = @people[person_index]
@@ -123,7 +123,7 @@ class App
     id = gets.chomp.to_i
     selected = @rentals.find_all { |rental| rental.person.id == id }
     if selected.empty?
-      puts "Person with id #{id} doesn't exist"
+      puts "Person with given id #{id} does not exist"
       return
     end
     puts 'Rentals:'
