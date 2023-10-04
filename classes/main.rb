@@ -13,7 +13,6 @@ end
 
 def prompt
   puts 'Welcome to School Library App!'
-  display_ui
   loop do
     show_options
     option = gets.chomp.to_i
