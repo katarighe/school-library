@@ -1,18 +1,5 @@
 require_relative 'app'
 
-def show_options
-  puts <<~OPTIONS
-  Please choose an option by entering a number:
-  1 - List of all books
-  2 - List of all people
-  3 - Create a person
-  4 - Create a book
-  5 - Create a rental
-  6 - List all rentals for a given person id
-  7 - Exit
-  OPTIONS
-end
-
 def prompt
   puts 'Welcome to the School Library App!'
   loop do
@@ -22,6 +9,19 @@ def prompt
 
     call_option(option)
   end
+end
+
+def show_options
+  puts <<~OPTIONS
+    Please choose an option by entering a number:
+    1 - List of all books
+    2 - List of all people
+    3 - Create a person
+    4 - Create a book
+    5 - Create a rental
+    6 - List all rentals for a given person id
+    7 - Exit
+  OPTIONS
 end
 
 def call_option(option)
