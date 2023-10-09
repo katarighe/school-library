@@ -129,6 +129,11 @@ ruby main.rb
 - Twitter: [@katarighe](https://twitter.com/katarighe)
 - LinkedIn: [@mighe](https://linkedin.com/in/mighe)
 
+👤 **Okari Nyandika**
+
+- GitHub: [@2004-okari](https://github.com/2004-okari)
+- LinkedIn: [@rooney-okari](https://www.linkedin.com/in/rooney-okari-86a5ba250/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
