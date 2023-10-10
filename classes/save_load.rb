@@ -9,7 +9,7 @@ module SaveLoad
     File.write('classes/books.json', '')
     @books.each do |book|
       json = JSON.generate({ title: book.title, author: book.author })
-      File.write('books.json', "#{json}\n", mode: 'a')
+      File.write('classes/books.json', "#{json}\n", mode: 'a')
     end
   end
 
@@ -23,7 +23,7 @@ module SaveLoad
                JSON.generate({ type: person.class, id: person.id, name: person.name, age: person.age,
                                specialization: person.specialization })
              end
-      File.write('people.json', "#{json}\n", mode: 'a')
+      File.write('classes/people.json', "#{json}\n", mode: 'a')
     end
   end
 
