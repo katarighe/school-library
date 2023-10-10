@@ -4,14 +4,17 @@ require_relative 'person'
 require_relative 'rental'
 require_relative 'student'
 require_relative 'teacher'
+require_relative 'save_load'
 
 class App
+  include SaveLoad
   attr_accessor :books, :people, :rentals
 
   def initialize
     @books = []
     @rentals = []
     @people = []
+    save_data
   end
 
   def list_books
@@ -133,5 +136,6 @@ class App
 
   def run
     prompt
+    save_data
   end
 end

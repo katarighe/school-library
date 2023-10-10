@@ -1,6 +1,9 @@
 require_relative 'app'
+require_relative 'save_load'
 
 class LibraryApp
+  include SaveLoad
+
   def initialize
     @library = App.new
   end
@@ -30,19 +33,16 @@ class LibraryApp
   end
 
   def call_option(option)
-    case option
-    when 1
-      @library.list_books
-    when 2
-      @library.list_people
-    when 3
-      @library.create_person
-    when 4
-      @library.create_book
-    when 5
-      @library.create_rental
-    when 6
-      @library.list_rentals
-    end
+    option_lookup = {
+      1 => :list_books,
+      2 => :list_people,
+      3 => :create_person,
+      4 => :create_book,
+      5 => :create_rental,
+      6 => :list_rentals,
+      7 => :save_data
+    }
+
+    @library.public_send(option_lookup[option])
   end
 end
