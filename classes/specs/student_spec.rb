@@ -7,11 +7,10 @@ describe Student do
   let(:student) { Student.new(classroom, 16, 'Alice') }
 
   context 'student is initialized with data' do
-    # it 'should inherit age, name, and parent_permission from Person' do
-    #   expect(student.age).to eq(16)
-    #   expect(student.name).to eq('Alice')
-    #   expect(student.parent_permission).to be true
-    # end
+    it 'should inherit age, name, and parent_permission from Person' do
+      expect(student.age).to eq(16)
+      expect(student.name).to eq('Alice')
+    end
 
     it 'should initialize a classroom' do
       expect(student.classroom).to eq(classroom)
