@@ -2,7 +2,7 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'book'
 require_relative 'person'
-require_relative 'json'
+require 'json'
 
 module SaveLoad
   def save_books
@@ -35,11 +35,11 @@ module SaveLoad
     end
   end
 
-  def save_data
-    save_books
-    save_people
-    save_rentals
-  end
+    def save_data
+      save_books unless File.exist?('books.json')
+      save_people unless File.exist?('people.json')
+      save_rentals unless File.exist?('rentals.json')
+    end
 
   def load_books
     return unless File.exist?('books.json')
