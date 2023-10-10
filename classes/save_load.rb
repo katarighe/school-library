@@ -6,7 +6,7 @@ require 'json'
 
 module SaveLoad
   def save_books
-    File.open('classes/books.json', 'wa') do |file|
+    File.open('classes/books.json', 'w') do |file|
       @books.each do |book|
         json = JSON.generate({ title: book.title, author: book.author })
         file.puts(json)
@@ -50,13 +50,9 @@ module SaveLoad
 
     @books = []
     File.foreach('classes/books.json') do |line|
-      begin
-        element = JSON.parse(line)
-        new_book = Book.new(element['title'], element['author'])
-        @books.push(new_book)
-      rescue JSON::ParserError
-        next
-      end
+      element = JSON.parse(line)
+      new_book = Book.new(element['title'], element['author'])
+      @books.push(new_book)
     end
   end
 
@@ -65,17 +61,13 @@ module SaveLoad
 
     @people = []
     File.foreach('classes/people.json') do |line|
-      begin
-        element = JSON.parse(line)
-        new_person = if element['type'] == 'Student'
-                       Student.new(element['id'], element['name'], element['age'], element['parent_permission'])
-                     else
-                       Teacher.new(element['id'], element['name'], element['age'], element['specialization'])
-                     end
-        @people.push(new_person)
-      rescue JSON::ParserError
-        next
-      end
+      element = JSON.parse(line)
+      new_person = if element['type'] == 'Student'
+                     Student.new(element['id'], element['name'], element['age'], element['parent_permission'])
+                   else
+                     Teacher.new(element['id'], element['name'], element['age'], element['specialization'])
+                   end
+      @people.push(new_person)
     end
   end
 
@@ -84,15 +76,11 @@ module SaveLoad
 
     @rentals = []
     File.foreach('classes/rentals.json') do |line|
-      begin
-        element = JSON.parse(line)
-        rental_person = @people[element['person']]
-        rental_book = @books[element['book']]
-        new_rental = Rental.new(rental_person, rental_book, element['date'])
-        @rentals.push(new_rental)
-      rescue JSON::ParserError
-        next
-      end
+      element = JSON.parse(line)
+      rental_person = @people[element['person']]
+      rental_book = @books[element['book']]
+      new_rental = Rental.new(rental_person, rental_book, element['date'])
+      @rentals.push(new_rental)
     end
   end
 
