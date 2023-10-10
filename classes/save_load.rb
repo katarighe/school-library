@@ -6,7 +6,7 @@ require_relative 'json'
 
 module SaveLoad
   def save_books
-    File.write('books.json', '')
+    File.write('classes/books.json', '')
     @books.each do |book|
       json = JSON.generate({ title: book.title, author: book.author })
       File.write('books.json', "#{json}\n", mode: 'a')
@@ -14,7 +14,7 @@ module SaveLoad
   end
 
   def save_people
-    File.write('people.json', '')
+    File.write('classes/people.json', '')
     @people.each do |person|
       json = if person.is_a?(Student)
                JSON.generate({ type: person.class, id: person.id, name: person.name, age: person.age,
@@ -28,10 +28,10 @@ module SaveLoad
   end
 
   def save_rentals
-    File.write('rentals.json', '')
+    File.write('classes/rentals.json', '')
     @rentals.each do |rental|
       json = JSON.generate({ date: rental.date, person: @people.index(rental.person), book: @books.index(rental.book) })
-      File.write('rentals.json', "#{json}\n", mode: 'a')
+      File.write('classes/rentals.json', "#{json}\n", mode: 'a')
     end
   end
 
