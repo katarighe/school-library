@@ -14,6 +14,7 @@ class App
     @books = []
     @rentals = []
     @people = []
+    save_load
   end
 
   def list_books
