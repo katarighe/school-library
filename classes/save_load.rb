@@ -6,7 +6,7 @@ require 'json'
 
 module SaveLoad
   def save_books
-    File.open('classes/books.json', 'w') do |file|
+    File.open('classes/books.json', 'wa') do |file|
       @books.each do |book|
         json = JSON.generate({ title: book.title, author: book.author })
         file.puts(json)
