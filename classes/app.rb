@@ -136,5 +136,6 @@ class App
 
   def run
     prompt
+    save_data
   end
 end
