@@ -14,7 +14,7 @@ module SaveLoad
   end
 
   def save_people
-    File.write('books.json', '')
+    File.write('people.json', '')
     @people.each do |person|
       json = if person.is_a?(Student)
                JSON.generate({ type: person.class, id: person.id, name: person.name, age: person.age,
