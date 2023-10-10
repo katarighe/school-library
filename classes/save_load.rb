@@ -32,7 +32,8 @@ module SaveLoad
   def save_rentals
     File.open('classes/rentals.json', 'w') do |file|
       @rentals.each do |rental|
-        json = JSON.generate({ date: rental.date, person: @people.index(rental.person), book: @books.index(rental.book) })
+        json = JSON.generate({ date: rental.date, person: @people.index(rental.person),
+                               book: @books.index(rental.book) })
         file.puts(json)
       end
     end
@@ -66,11 +67,11 @@ module SaveLoad
     File.foreach('classes/people.json') do |line|
       begin
         element = JSON.parse(line)
-        if element['type'] == 'Student'
-          new_person = Student.new(element['id'], element['name'], element['age'], element['parent_permission'])
-        else
-          new_person = Teacher.new(element['id'], element['name'], element['age'], element['specialization'])
-        end
+        new_person = if element['type'] == 'Student'
+                       Student.new(element['id'], element['name'], element['age'], element['parent_permission'])
+                     else
+                       Teacher.new(element['id'], element['name'], element['age'], element['specialization'])
+                     end
         @people.push(new_person)
       rescue JSON::ParserError
         next
