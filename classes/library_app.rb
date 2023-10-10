@@ -2,7 +2,7 @@ require_relative 'app'
 require_relative 'save_load'
 
 class LibraryApp
-include SaveLoad
+  include SaveLoad
 
   def initialize
     @library = App.new
