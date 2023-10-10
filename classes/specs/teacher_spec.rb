@@ -2,13 +2,12 @@ require 'rspec'
 require_relative '../teacher'
 
 describe Teacher do
-  let(:teacher) { Teacher.new('Math', 40, 'John Doe') }
+  let(:teacher) { Teacher.new('Math', 40) }
 
   context 'initialized with data' do
-    it 'should inherit age, name, and parent_permission from Person' do
+    it 'should inherit age, name from Person' do
       expect(teacher.age).to eq(40)
-      expect(teacher.name).to eq('John Doe')
-      expect(teacher.parent_permission).to be(true)
+      expect(teacher.name).to eq('Unknown')
     end
 
     it 'should have a specialization' do
