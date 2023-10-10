@@ -1,8 +1,10 @@
 require 'rspec'
 require_relative '../classroom'
+require_relative '../student'
 
 describe Classroom do
   let(:classroom) { Classroom.new('label') }
+  student = Student.new('Math', 15)
 
   context 'Initialized with data' do
     it 'should initialize classroom with a label' do
@@ -20,4 +22,11 @@ describe Classroom do
       expect(classroom.label).to eq('new label')
     end
   end
+
+  # context 'add_student method' do
+  #   it 'should add a new student to the student array' do
+  #     stud = classroom.add_student(student)
+  #     expect(classroom.students).to include(stud)
+  #   end
+  # end
 end
