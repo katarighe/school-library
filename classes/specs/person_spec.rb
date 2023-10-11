@@ -4,6 +4,18 @@ require_relative '../person'
 describe Person do
   let(:person) { Person.new(14, 'Okari') }
 
+  context 'add rental' do
+    it 'adds a new rental to the rental list of a person' do
+      person = Person.new(25)
+      book = Book.new('Book 1', 'Author 1')
+      date = Date.today
+
+      person.add_rental(date, book)
+
+      expect(person.rentals).to include(Rental.new(date, book, person))
+    end
+  end
+
   context 'using services' do
     it 'returns true if the person is of age' do
       person = Person.new(14)
