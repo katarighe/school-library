@@ -4,7 +4,7 @@ require_relative '../student'
 
 describe Classroom do
   let(:classroom) { Classroom.new('label') }
-  student = Student.new('Math', 15)
+  Student.new('Math', 15)
 
   context 'Initialized with data' do
     it 'should initialize classroom with a label' do
