@@ -11,7 +11,7 @@ describe Classroom do
       expect(classroom.label).to eq('label')
     end
 
-    it 'should initialize an emppty students array' do
+    it 'should initialize an empty students array' do
       expect(classroom.students).to be_empty
     end
   end
