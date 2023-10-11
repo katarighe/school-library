@@ -12,30 +12,30 @@ describe Classroom do
     end
   end
 
-  context '#students' do
-    it 'returns an empty array by default' do
-      expect(classroom.students).to be_empty
-    end
-  end
-
-  context '#add_student' do
-    let(:student) { Student.new('John Doe') }
-
-    it 'adds a student to the classroom' do
-      classroom.add_student(student)
-      expect(classroom.students).to include(student)
-    end
-
-    it 'sets the student classroom to the classroom' do
-      classroom.add_student(student)
-      expect(student.classroom).to eq(classroom)
-    end
-  end
-
-  context 'attr accesor' do
+  context '#attr_accesor' do
     it 'label instance can be changed' do
       classroom.label = 'new label'
       expect(classroom.label).to eq('new label')
+    end
+
+    context '#students' do
+      it 'returns an empty array by default' do
+        expect(classroom.students).to be_empty
+      end
+    end
+
+    context '#add_student' do
+      let(:student) { Student.new('John Doe') }
+
+      it 'adds a student to the classroom' do
+        classroom.add_student(student)
+        expect(classroom.students).to include(student)
+      end
+
+      it 'sets the student classroom to the classroom' do
+        classroom.add_student(student)
+        expect(student.classroom).to eq(classroom)
+      end
     end
   end
 end
