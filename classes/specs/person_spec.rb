@@ -4,7 +4,7 @@ require_relative '../person'
 describe Person do
   let(:person) { Person.new(14, 'Okari') }
 
-  context 'add rental' do
+  context '#add_rental' do
     it 'adds a new rental to the rental list of a person' do
       person = Person.new(25)
       book = Book.new('Book 1', 'Author 1')
@@ -16,7 +16,7 @@ describe Person do
     end
   end
 
-  context 'using services' do
+  context '#using_services' do
     it 'returns true if the person is of age' do
       person = Person.new(14)
       expect(person.can_use_services?).to be true
@@ -33,7 +33,7 @@ describe Person do
     end
   end
 
-  context 'correct name' do
+  context '#correct_name' do
     it 'returns the actual name' do
       person = Person.new(14, 'Okari')
       expect(person.correct_name).to eq 'Okari'
