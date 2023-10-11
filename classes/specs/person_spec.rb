@@ -38,5 +38,18 @@ describe Person do
       person = Person.new(14, 'Okari')
       expect(person.correct_name).to eq 'Okari'
     end
+
+    context '#private methods' do
+      context '#of_age?' do
+        it 'returns true if the person is 18 years old or older' do
+          expect(person.of_age?).to be true
+        end
+
+        it 'returns false if the person is younger than 18 years old' do
+          person.age = 17
+          expect(person.of_age?).to be false
+        end
+      end
+    end
   end
 end
