@@ -4,7 +4,7 @@ require_relative '../student'
 
 describe Classroom do
   let(:classroom) { Classroom.new('Classroom 1') }
-  Student.new('Math', 15)
+  let(:student) { Student.new('John Doe', 'Math', 15) }
 
   context '#label' do
     it 'returns the classroom label' do
@@ -25,8 +25,6 @@ describe Classroom do
     end
 
     context '#add_student' do
-      let(:student) { Student.new('John Doe') }
-
       it 'adds a student to the classroom' do
         classroom.add_student(student)
         expect(classroom.students).to include(student)
