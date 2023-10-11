@@ -6,13 +6,29 @@ describe Classroom do
   let(:classroom) { Classroom.new('label') }
   Student.new('Math', 15)
 
-  context 'Initialized with data' do
-    it 'should initialize classroom with a label' do
-      expect(classroom.label).to eq('label')
+  context '#label' do
+    it 'returns the classroom label' do
+      expect(classroom.label).to eq('Classroom 1')
+    end
+  end
+
+  context '#students' do
+    it 'returns an empty array by default' do
+      expect(classroom.students).to be_empty
+    end
+  end
+
+  context '#add_student' do
+    let(:student) { Student.new('John Doe') }
+
+    it 'adds a student to the classroom' do
+      classroom.add_student(student)
+      expect(classroom.students).to include(student)
     end
 
-    it 'should initialize an empty students array' do
-      expect(classroom.students).to be_empty
+    it 'sets the student classroom to the classroom' do
+      classroom.add_student(student)
+      expect(student.classroom).to eq(classroom)
     end
   end
 
@@ -22,11 +38,4 @@ describe Classroom do
       expect(classroom.label).to eq('new label')
     end
   end
-
-  # context 'add_student method' do
-  #   it 'should add a new student to the student array' do
-  #     stud = classroom.add_student(student)
-  #     expect(classroom.students).to include(stud)
-  #   end
-  # end
 end
