@@ -3,7 +3,7 @@ require_relative '../classroom'
 require_relative '../student'
 
 describe Classroom do
-  let(:classroom) { Classroom.new('label') }
+  let(:classroom) { Classroom.new('Classroom 1') }
   Student.new('Math', 15)
 
   context '#label' do
